@@ -26,6 +26,7 @@ Our data usage is many-fold:
 - BI is used externally to provide reporting to Customers (examples: Uptime of devices, mean time to repair, % of repeat breakdowns...)
 - BI is used programmatically in our tooling and often embedded in our products. (examples: Dashboard to correlate real-world usage & energy usage, track traffic information...)
 
+
 Some of our data sources include:
 - IoT sensors
 - Application databases
@@ -36,10 +37,10 @@ The IoT sensors' data is pre-processed on edge and then ingested in GCP via a st
 The Application databases' data is ingested in GCP via a streaming service.
 Both the CRM & ERP's data are ingested in GCP via a batch service.
 
-DBT is then used to merge, transform & aggregate data from all those sources in GCP. 
-The processed data is then made available through our BI platform
+Dbt is then used to merge, transform & aggregate data from all those sources in GCP using batch jobs
+The processed data is then made available through our BI platform (we use [Looker](https://cloud.google.com/looker?hl=en) internally, but feel free to imagine any similar tooling.)
 
-[todo diagram]
+![diagram](./arch-diag.svg)
 
 ## New requirement
 As part of the ongoing development of our offerings, we want to add a couple of new features:
